@@ -1798,6 +1798,18 @@ figcaption {
   position: relative;
 }
 
+.new-pl{
+display:flex;
+row-gap: 1em;
+width: 50em;
+flex-flow: wrap;
+justify-content: flex-start;
+align-items: flex-start;
+margin-bottom: 1em;
+position:relative;
+margin-left: auto;
+}
+
 .platformy {
   white-space: pre;
   flex-flow: wrap;
@@ -1808,7 +1820,6 @@ figcaption {
   margin-bottom: 1em;
   margin-left: auto;
   display: flex;
-  position: static;
   top: auto;
   bottom: 0%;
   left: auto;
@@ -3626,6 +3637,7 @@ figcaption {
 
   .platformy {
     font-size: 1.5vw;
+   
   }
 
   .line {
