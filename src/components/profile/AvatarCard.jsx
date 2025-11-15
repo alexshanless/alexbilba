@@ -6,10 +6,6 @@ const AvatarCard = () => {
           <img src='/images/profile-pic.jpeg' alt='Alex Bilba' />
         </div>
       </div>
-      <div className='status-indicator'>
-        <div className='status-dot'></div>
-        <span>Limited Availability</span>
-      </div>
     </div>
   );
 };

@@ -18,7 +18,8 @@ const BioCard = () => {
 				management, and automations. So I learned it all. <br />
 				7+ years later, I'm a Seattle-based freelancer who builds complete
 				digital solutions in Webflow and React, automates workflows, and somehow
-				keeps everything running. Crazy? Maybe. But it gets the job done.
+				keeps everything running. <br />
+				Crazy? Maybe. But it gets the job done.
 			</p>
 		</div>
 	);

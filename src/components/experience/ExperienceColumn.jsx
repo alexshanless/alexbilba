@@ -18,7 +18,7 @@ const ExperienceColumn = () => {
 			company: 'Web Designer & Webflow Developer',
 			period: '2017 - present',
 			responsibilities: [
-				'Designed and developed 15+ websites using Webflow',
+				'Designed and developed 25+ websites using Webflow',
 				'Achieved Upwork Top Rated status with 30+ happy clients',
 				'Delivered projects for diverse industries',
 				'Specialized in conversion optimization and SEO',
