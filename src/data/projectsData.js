@@ -19,7 +19,7 @@ export const projectsData = [
 		id: 1,
 		title: 'EMBR Solar',
 		description:
-			'For this project, I built a website for a solar energy company. I\'m particularly proud of 3d animation that took a while to set up.',
+			"For this project, I built a website for a solar energy company. I'm particularly proud of 3d animation that took a while to set up.",
 		image: embrLogo,
 		tags: ['Webflow'],
 		link: 'https://www.embrsolar.com/',
@@ -69,11 +69,11 @@ export const projectsData = [
 		id: 6,
 		title: 'Dog Bandana Co',
 		description:
-			'For Dog Bandana Co., I built an e-commerce platform to sell their pet bandanas and accessories. Key goals included showcasing the variety and style of their products, creating a user-friendly shopping experience, and reflecting the brand\'s focus on pets and their owners.',
+			"For Dog Bandana Co., I built an e-commerce platform to sell their pet bandanas and accessories. Key goals included showcasing the variety and style of their products, creating a user-friendly shopping experience, and reflecting the brand's focus on pets and their owners.",
 		image: dogBandanaLogo,
 		tags: ['Shopify', 'Webflow'],
 		link: 'https://dogbandanaco.com/',
-		featured: false,
+		featured: true,
 	},
 	{
 		id: 7,
@@ -99,7 +99,7 @@ export const projectsData = [
 		id: 9,
 		title: 'The Fowl Drake',
 		description:
-			'I was responsible for building this e-commerce website from scratch. It\'s built with ____ using ____ and ____.',
+			"I was responsible for building this e-commerce website from scratch. It's built with ____ using ____ and ____.",
 		image: fowldrakeLogo,
 		tags: ['Shopify', 'End-to-End'],
 		link: 'https://fowldrake.com/',
@@ -111,9 +111,9 @@ export const projectsData = [
 		description:
 			'Developed a seamless platform for aggregates procurement and supply chain, connecting buyers, suppliers, and haulers. Materially is an end-to-end, digital technology platform for aggregate suppliers, streamlining their sales & dispatch operations and connecting them with their customers and haulers in real-time.',
 		image: materiallyLogo,
-		tags: ['End-to-End', 'Shopify'],
+		tags: ['End-to-End', 'Webflow'],
 		link: 'https://www.materially.com/',
-		featured: true,
+		featured: false,
 	},
 	{
 		id: 11,
@@ -128,8 +128,7 @@ export const projectsData = [
 	{
 		id: 12,
 		title: 'Big Health',
-		description:
-			'',
+		description: '',
 		image: null,
 		tags: ['Webflow'],
 		link: 'https://www.bighealth.com/',
@@ -139,7 +138,7 @@ export const projectsData = [
 		id: 13,
 		title: 'Marjorie Restaurant',
 		description:
-			'Marjorie restaurant needed a new website to double down on their existing SEO traffic, build brand loyalty, convert more direct buyers online. I transformed Marjorie\'s digital presence, creating a website that authentically captures the brand\'s spirit and commitment to climate, health, and equity.',
+			"Marjorie restaurant needed a new website to double down on their existing SEO traffic, build brand loyalty, convert more direct buyers online. I transformed Marjorie's digital presence, creating a website that authentically captures the brand's spirit and commitment to climate, health, and equity.",
 		image: marjorieLogo,
 		tags: ['Webflow', 'Design'],
 		link: 'https://www.marjorierestaurant.com/',
@@ -168,8 +167,7 @@ export const projectsData = [
 	{
 		id: 16,
 		title: 'Valorem',
-		description:
-			'Valorem specialized in enterprise procurement.',
+		description: 'Valorem specialized in enterprise procurement.',
 		image: null,
 		tags: ['Design'],
 		link: 'https://www.valoremps.com/',
