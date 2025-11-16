@@ -79,7 +79,7 @@ export const projectsData = [
 		id: 7,
 		title: 'Blur',
 		description:
-			'Developed a website for an architectural design studio. This project focused on',
+			'Developed a website for an architectural design studio. This project focused on showcasing their portfolio with a clean, minimalist aesthetic that highlights their architectural work and design philosophy.',
 		image: blurLogo,
 		tags: ['Webflow'],
 		link: 'https://blur-4c9680.webflow.io/',
@@ -99,7 +99,7 @@ export const projectsData = [
 		id: 9,
 		title: 'The Fowl Drake',
 		description:
-			"I was responsible for building this e-commerce website from scratch. It's built with ____ using ____ and ____.",
+			'Built a complete e-commerce solution from the ground up for this specialty food retailer. The project included custom Shopify theme development, product catalog management, and seamless checkout integration.',
 		image: fowldrakeLogo,
 		tags: ['Shopify', 'End-to-End'],
 		link: 'https://fowldrake.com/',
@@ -119,7 +119,7 @@ export const projectsData = [
 		id: 11,
 		title: 'Beyond the Guidebook',
 		description:
-			'I built the end-to-end website for this small business specializing in curated, small group travel. Used ___ and ___',
+			'Built a complete end-to-end website for this small business specializing in curated, small group travel experiences. The platform showcases unique tour packages, handles bookings, and emphasizes their personalized approach to travel planning.',
 		image: beyondtheguidebookLogo,
 		tags: ['End-to-End'],
 		link: 'https://www.beyondtheguidebooktours.com/',
@@ -128,7 +128,8 @@ export const projectsData = [
 	{
 		id: 12,
 		title: 'Big Health',
-		description: '',
+		description:
+			'Developed the website for Big Health, a digital therapeutics company focused on mental health solutions. The project involved creating a professional, trustworthy platform to showcase their evidence-based sleep and mental health programs.',
 		image: null,
 		tags: ['Webflow'],
 		link: 'https://www.bighealth.com/',
@@ -148,7 +149,7 @@ export const projectsData = [
 		id: 14,
 		title: 'Lustre',
 		description:
-			'For this project, I created ___ and ___. Lustre Infrared Sauna Studio features private, state of the art infrared sauna suites, and Normatec Compression, Red Light and Halo Salt Therapies.',
+			'Created a wellness-focused website for Lustre Infrared Sauna Studio. The platform highlights their private, state-of-the-art infrared sauna suites, and showcases additional services including Normatec Compression, Red Light, and Halo Salt Therapies with an emphasis on health and relaxation.',
 		image: lustreLogo,
 		tags: ['Webflow'],
 		link: 'https://www.lustreinfraredsauna.com/',
@@ -167,7 +168,8 @@ export const projectsData = [
 	{
 		id: 16,
 		title: 'Valorem',
-		description: 'Valorem specialized in enterprise procurement.',
+		description:
+			'Designed a comprehensive website for Valorem, an enterprise procurement solutions provider. The project focused on presenting their specialized procurement services, streamlining complex B2B information, and establishing their expertise in enterprise purchasing solutions.',
 		image: null,
 		tags: ['Design'],
 		link: 'https://www.valoremps.com/',
@@ -177,7 +179,7 @@ export const projectsData = [
 		id: 17,
 		title: 'Education Advanced',
 		description:
-			'Education Advanced supports educators and students by providing testing, assessment, evaluation and graduation tracking services.',
+			'Built a professional website for Education Advanced, a comprehensive educational technology platform. The project showcased their suite of testing, assessment, evaluation, and graduation tracking services designed to support educators and students throughout the academic journey.',
 		image: educationAdvancedLogo,
 		tags: ['Webflow'],
 		link: 'https://www.educationadvanced.com/',

@@ -365,16 +365,15 @@ body {
 
 .project-logo {
   aspect-ratio: 1;
-  background: #2a2a2a;
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   transition: all 0.3s ease;
-  border: 2px solid transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
-  isolation: isolate;
 }
 
 .project-logo img {
@@ -382,7 +381,6 @@ body {
   height: 100%;
   object-fit: contain;
   padding: 16px;
-  mix-blend-mode: difference;
   border-radius: 12px;
   transition: all 0.3s ease;
 }
@@ -428,9 +426,10 @@ body {
 }
 
 .project-logo:hover {
-  background: #3a3a3a;
+  background: rgba(255, 255, 255, 0.12);
   border-color: #667eea;
   transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.2);
 }
 
 .logo-placeholder {
@@ -785,18 +784,21 @@ body {
   flex-shrink: 0;
   width: 60px;
   height: 60px;
-  background: #2a2a2a;
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 8px;
   transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .bento-project-card:hover .bento-project-logo {
-  background: #3a3a3a;
+  background: rgba(255, 255, 255, 0.12);
   transform: scale(1.05);
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
 }
 
 .bento-project-logo img {
