@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const BioCard = () => {
-	const titles = ['Developer', 'UI/UX Designer', 'PM'];
+	const titles = ['Frontend Developer', 'UI/UX Designer', 'Project Manager'];
 	const [shuffledTitles, setShuffledTitles] = useState(titles);
 
 	useEffect(() => {
