@@ -3,9 +3,9 @@ import ExperienceCard from './ExperienceCard';
 const ExperienceColumn = () => {
 	const experiences = [
 		{
-			title: 'Lead Designer & Project Manager',
-			company: 'Valorem Project',
-			period: '2023 - present',
+			title: 'Technical Project Manager',
+			company: 'BuildCore',
+			period: 'Jun 2025 - Current',
 			responsibilities: [
 				'Leading design for property management web & mobile apps',
 				'Managing user research, wireframes, and prototypes',
