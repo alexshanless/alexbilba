@@ -1,4 +1,39 @@
 const ProjectCard = ({ project, layout = 'default' }) => {
+  const isPrivate = !project.link;
+
+  const content = (
+    <div className='bento-project-content'>
+      <div className='bento-project-header'>
+        <h3>{project.title}</h3>
+        {project.image && (
+          <div className='bento-project-logo'>
+            <img src={project.image} alt={project.title} loading='lazy' />
+          </div>
+        )}
+      </div>
+      <div className='project-tags'>
+        {project.tags.map((tag, index) => (
+          <span key={index} className='project-tag'>
+            {tag}
+          </span>
+        ))}
+      </div>
+      <p className='bento-project-description'>{project.description}</p>
+      <span className={`bento-project-link ${isPrivate ? 'private' : ''}`}>
+        {isPrivate ? 'Private — Available on request' : 'View Project →'}
+      </span>
+    </div>
+  );
+
+  if (isPrivate) {
+    return (
+      <div className={`bento-project-card bento-${layout} bento-private`}>
+        <div className='bento-project-placeholder'></div>
+        {content}
+      </div>
+    );
+  }
+
   return (
     <a
       href={project.link}
@@ -7,27 +42,7 @@ const ProjectCard = ({ project, layout = 'default' }) => {
       className={`bento-project-card bento-${layout}`}
     >
       <div className='bento-project-placeholder'></div>
-      <div className='bento-project-content'>
-        <div className='bento-project-header'>
-          <h3>{project.title}</h3>
-          {project.image && (
-            <div className='bento-project-logo'>
-              <img src={project.image} alt={project.title} loading='lazy' />
-            </div>
-          )}
-        </div>
-        <div className='project-tags'>
-          {project.tags.map((tag, index) => (
-            <span key={index} className='project-tag'>
-              {tag}
-            </span>
-          ))}
-        </div>
-        <p className='bento-project-description'>{project.description}</p>
-        <span className='bento-project-link'>
-          View Project →
-        </span>
-      </div>
+      {content}
     </a>
   );
 };

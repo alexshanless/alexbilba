@@ -878,6 +878,27 @@ body {
   gap: 12px;
 }
 
+.bento-project-link.private {
+  color: #888;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.bento-project-card.bento-private {
+  cursor: default;
+}
+
+.bento-project-card.bento-private:hover {
+  transform: none;
+  border-color: #2a2a2a;
+  box-shadow: none;
+}
+
+.portfolio-link.github:hover {
+  background: #333;
+  color: #ffffff;
+}
+
 .no-projects {
   text-align: center;
   color: #888;
@@ -1350,4 +1371,69 @@ body {
     max-width: 100%;
     width: 100%;
   }
+}
+
+/* Stack */
+.stack-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stack-row {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  line-height: 1.5;
+}
+
+.stack-label {
+  font-size: 12px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  min-width: 80px;
+  flex-shrink: 0;
+}
+
+.stack-value {
+  font-size: 14px;
+  color: #b0b0b0;
+}
+
+/* Services list */
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.service-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #b0b0b0;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.service-item svg {
+  flex-shrink: 0;
+  font-size: 18px;
+  color: #888;
+}
+
+.service-item:hover {
+  color: #ffffff;
+}
+
+.service-item:hover svg {
+  color: #ffffff;
+}
+
+/* Side Projects */
+.side-projects-text {
+  color: #b0b0b0;
+  font-size: 15px;
+  line-height: 1.6;
 }

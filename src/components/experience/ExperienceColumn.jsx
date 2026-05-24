@@ -3,25 +3,35 @@ import ExperienceCard from './ExperienceCard';
 const ExperienceColumn = () => {
 	const experiences = [
 		{
-			title: 'Technical Project Manager',
+			title: 'Fullstack Engineer',
 			company: 'BuildCore',
 			period: 'Jun 2025 - Current',
 			responsibilities: [
-				'Leading design for property management web & mobile apps',
-				'Managing user research, wireframes, and prototypes',
-				'Overseeing development sprints using Agile methods',
-				'Creating high-fidelity designs in Figma',
+				'Building the construction management platform end to end',
+				'React app for property managers, AWS backend (Lambda, DynamoDB, Cognito, S3)',
+				'Shipped role-based access, document pipelines, real-time notifications',
+				'Built automated reporting system tracking project health across the portfolio',
 			],
 		},
 		{
-			title: 'Freelance Designer',
-			company: 'Web Designer & Webflow Developer',
-			period: '2017 - present',
+			title: 'Technical PM & UI/UX Designer',
+			company: 'Valorem',
+			period: '2023 - 2025',
 			responsibilities: [
-				'Designed and developed 25+ websites using Webflow',
-				'Achieved Upwork Top Rated status with 30+ happy clients',
-				'Delivered projects for diverse industries',
-				'Specialized in conversion optimization and SEO',
+				'Led product design for property management web and mobile apps',
+				'Ran user research, wireframes, prototypes, and Figma high-fidelity designs',
+				'Managed development sprints using Agile methods',
+			],
+		},
+		{
+			title: 'Freelance Developer & Designer',
+			company: 'Self-employed',
+			period: '2017 - Present',
+			responsibilities: [
+				'Shipped 25+ websites and web apps for clients across multiple industries',
+				'Upwork Top Rated with 100% Job Success Score',
+				'Specialized in Webflow builds, then expanded into React and AWS',
+				'Conversion optimization and SEO baked into every build',
 			],
 		},
 	];

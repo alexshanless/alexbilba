@@ -1,13 +1,11 @@
-import DesignTools from './DesignTools';
-import Development from './Development';
+import Stack from './Development';
 import Location from './Location';
 import Services from './Services';
 
 const SkillsColumn = () => {
   return (
     <div className='skills-column'>
-      <DesignTools />
-      <Development />
+      <Stack />
       <Services />
       <Location />
     </div>

@@ -1,4 +1,4 @@
-import { DesignIcon, CodeIcon, InnovationIcon } from '../icons/UtilityIcons';
+import { CodeIcon, DesignIcon, InnovationIcon } from '../icons/UtilityIcons';
 
 const Interests = () => {
   return (
@@ -6,16 +6,16 @@ const Interests = () => {
       <h3>Interests</h3>
       <div className='interests'>
         <div className='interest-item'>
-          <DesignIcon />
-          <span>UI/UX Design</span>
+          <CodeIcon />
+          <span>Fullstack Development</span>
         </div>
         <div className='interest-item'>
-          <CodeIcon />
-          <span>Web Development</span>
+          <DesignIcon />
+          <span>Product Design</span>
         </div>
         <div className='interest-item'>
           <InnovationIcon />
-          <span>Innovation</span>
+          <span>Automation</span>
         </div>
       </div>
     </div>

@@ -6,6 +6,7 @@ import SkillsExperienceLayout from './components/experience/SkillsExperienceLayo
 import FeaturedProjects from './components/sections/FeaturedProjects';
 import PortfolioLinks from './components/sections/PortfolioLinks';
 import DetailsGrid from './components/sections/DetailsGrid';
+import SideProjects from './components/sections/SideProjects';
 import TestimonialsSlider from './components/testimonials/TestimonialsSlider';
 import ProjectsPage from './components/projects/ProjectsPage';
 import JokePopup from './components/JokePopup';
@@ -19,6 +20,7 @@ const HomePage = () => {
       <FeaturedProjects />
       <PortfolioLinks />
       <DetailsGrid />
+      <SideProjects />
       <TestimonialsSlider />
     </div>
   );
