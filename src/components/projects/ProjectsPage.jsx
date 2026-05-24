@@ -6,7 +6,7 @@ import ProjectCard from './ProjectCard';
 const ProjectsPage = () => {
   const [activeFilter, setActiveFilter] = useState('All');
 
-  const filters = ['All', 'Webflow', 'Shopify', 'Design', 'End-to-End'];
+  const filters = ['All', 'Fullstack', 'Webflow', 'Shopify', 'Design'];
 
   const filteredProjects = activeFilter === 'All'
     ? projectsData
@@ -19,7 +19,7 @@ const ProjectsPage = () => {
       <div className='projects-header'>
         <Link to='/' className='back-home-link'>← Back to Home</Link>
         <h1>My Projects</h1>
-        <p>Explore my work across design, development, and project management</p>
+        <p>Selected work across fullstack development, design, and Webflow.</p>
       </div>
 
       <div className='projects-filters'>
