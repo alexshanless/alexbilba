@@ -1,0 +1,65 @@
+/* Terminal route-transition strip. Theme-independent dark, by design
+   (terminals stay dark in both modes). Slides down, types "$ cd ~/path",
+   then the new page content fades in underneath it. */
+
+.strip {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  padding: 0 32px;
+  background: #1a1815;
+  border-bottom: 1px solid #7cb897;
+  color: #e8e2d2;
+  font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 13px;
+  white-space: pre;
+  animation: slideDown 120ms ease both;
+}
+.stripLeaving {
+  animation: slideUp 120ms ease both;
+}
+.prompt {
+  color: #7cb897;
+}
+.caret {
+  color: #7cb897;
+  margin-left: 1px;
+  animation: blink 800ms steps(1) infinite;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+@keyframes slideUp {
+  from { transform: translateY(0); }
+  to { transform: translateY(-100%); }
+}
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+/* content fade: hidden instantly on swap, fades back in after the type */
+.contentOut {
+  opacity: 0;
+}
+.contentIn {
+  opacity: 1;
+  transition: opacity 120ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .strip,
+  .stripLeaving {
+    animation: none;
+  }
+  .contentIn {
+    transition: none;
+  }
+}
