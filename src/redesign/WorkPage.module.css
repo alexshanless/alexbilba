@@ -348,12 +348,24 @@
   .gridTwo {
     grid-template-columns: 1fr;
   }
+  /* mobile: row 1 = name + tag (top-right), row 2 = scope spans full width.
+     `1fr auto` lets the tag hug the right padding edge symmetrically with the name on the left. */
   .archRow {
-    grid-template-columns: 1fr 80px;
+    grid-template-columns: 1fr auto;
     gap: 8px 16px;
+  }
+  .archRow > :first-child {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .archRow > :last-child {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: right;
   }
   .archScope {
     grid-column: 1 / -1;
+    grid-row: 2;
     color: var(--soft);
   }
   .footer {
