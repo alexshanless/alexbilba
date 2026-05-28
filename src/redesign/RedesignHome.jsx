@@ -28,12 +28,12 @@ const STACK = [
 ];
 
 const SHIP_LOG = [
-  ['2025', 'buildcore (private)', 'B2B · construction', 'fullstack SaaS · react + aws', 'ongoing', '●', null],
-  ['2024', 'jnagroup.net.au', 'B2B · structural eng.', 'marketing site · three audiences', 'live', '↗', 'https://www.jnagroup.net.au/'],
-  ['2024', 'csmediaoc.com', 'B2B · marketing svc.', 'agency site + brand design', 'live', '↗', 'https://www.csmediaoc.com/'],
-  ['2023', 'embrsolar.com', 'B2B/C · solar', 'marketing site · 3D model · monday.com pipeline', 'live', '↗', 'https://www.embrsolar.com/'],
-  ['2021', 'musclebees.co.uk', 'D2C · sports nutrition', 'ecommerce at scale · CRO-first', 'live', '↗', 'https://www.musclebees.co.uk/'],
-  ['2026', 'discord bots', 'milsim community', 'slash-command bot · lambda + ddb', 'side', '●', null],
+  ['2025', 'buildcore (private)', 'B2B · construction', 'fullstack SaaS · react + aws', 'in dev', null],
+  ['2024', 'jnagroup.net.au', 'B2B · structural eng.', 'marketing site · three audiences', 'live', 'https://www.jnagroup.net.au/'],
+  ['2024', 'csmediaoc.com', 'B2B · marketing svc.', 'agency site + brand design', 'live', 'https://www.csmediaoc.com/'],
+  ['2023', 'embrsolar.com', 'B2B/C · solar', 'marketing site · 3D model · monday.com pipeline', 'live', 'https://www.embrsolar.com/'],
+  ['2021', 'musclebees.co.uk', 'D2C · sports nutrition', 'ecommerce at scale · CRO-first', 'live', 'https://www.musclebees.co.uk/'],
+  ['2026', 'discord bots', 'milsim community', 'slash-command bot · lambda + ddb', 'side', null],
 ];
 
 const PROCESS = [
@@ -254,22 +254,26 @@ export default function RedesignHome() {
         </div>
         <div className={styles.shipTable}>
           {SHIP_LOG.map((r) => {
+            const [year, project, category, description, status, link] = r;
+            const tagClass = link ? styles.ok : status === 'in dev' ? styles.warn : styles.dim;
+            const tagText = link ? 'live ↗' : status;
             const inner = (
               <>
-                <span className={styles.dim}>{r[0]}</span>
-                <span className={styles.shipProject}>{r[1]}</span>
-                <span className={styles.dim}>{r[2]}</span>
-                <span>{r[3]}</span>
-                <span className={styles.shipDur}>{r[4]}</span>
-                <span className={styles.shipArrow}>{r[5]}</span>
+                <span>
+                  <span className={styles.dim}>{year} · </span>
+                  <span className={styles.shipProject}>{project}</span>
+                </span>
+                <span className={`${styles.dim} ${styles.shipScope}`}>{description}</span>
+                <span className={`${styles.dim} ${styles.shipStack}`}>{category}</span>
+                <span className={tagClass} style={{ textAlign: 'right' }}>{tagText}</span>
               </>
             );
-            return r[6] ? (
-              <a key={r[1]} className={styles.shipRow} href={r[6]} target="_blank" rel="noreferrer">
+            return link ? (
+              <a key={project} className={styles.shipRow} href={link} target="_blank" rel="noreferrer">
                 {inner}
               </a>
             ) : (
-              <div key={r[1]} className={styles.shipRow}>{inner}</div>
+              <div key={project} className={`${styles.shipRow} ${styles.shipDead}`}>{inner}</div>
             );
           })}
         </div>
@@ -346,7 +350,7 @@ export default function RedesignHome() {
       {/* ── footer (inverts — open decision) ── */}
       <footer className={styles.footer}>
         <span>© 2026 alex bilba · tacoma</span>
-        <span className={styles.footerDim}>built in react · ~/site.v7 · last deploy 2026-05-20</span>
+        <span className={styles.footerDim}>built in react · ~/site.v7 · last deploy 2026-05-27</span>
         <span className={styles.footerDim}>
           <a href={UPWORK} target="_blank" rel="noreferrer" style={{ color: 'inherit' }}>upwork</a>
           {' · '}

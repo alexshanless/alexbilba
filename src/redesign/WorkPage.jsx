@@ -369,7 +369,7 @@ export default function WorkPage() {
       {/* ── footer ── */}
       <footer className={styles.footer}>
         <span>© 2026 alex bilba · tacoma</span>
-        <span className={styles.footerDim}>built in react · ~/work · last update 2026-05-26</span>
+        <span className={styles.footerDim}>built in react · ~/work · last update 2026-05-27</span>
         <span className={styles.footerDim}>
           <a href={UPWORK} target="_blank" rel="noreferrer" style={{ color: 'inherit' }}>upwork</a>
           {' · '}

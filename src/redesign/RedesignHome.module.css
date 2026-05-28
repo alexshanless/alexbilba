@@ -633,23 +633,21 @@
   width: 180px;
 }
 
-/* ---------- ship log ---------- */
+/* ---------- ship log (mirrors /work archive rows) ---------- */
 .shipTable {
   border-top: 1px solid var(--rule);
 }
 .shipRow {
   display: grid;
-  grid-template-columns: 64px 200px 220px 1fr 80px 32px;
+  grid-template-columns: 220px 1fr 220px 80px;
   gap: 24px;
-  padding: 16px;
+  padding: 14px 16px;
   margin: 0 -16px;
   border-bottom: 1px solid var(--rule);
   align-items: baseline;
-  background: transparent;
-  box-shadow: none;
-  cursor: pointer;
   color: inherit;
   text-decoration: none;
+  cursor: pointer;
   transition: background-color 120ms ease, box-shadow 120ms ease;
 }
 .shipRow:hover {
@@ -662,18 +660,16 @@
 .shipRow:hover .shipProject {
   color: var(--accent);
 }
-.shipDur {
-  color: var(--accent);
-  text-align: right;
+/* dead-link rows: present but not clickable, so no hover affordance */
+.shipDead {
+  cursor: default;
 }
-.shipArrow {
-  text-align: right;
-  color: var(--soft);
-  transition: color 120ms ease, transform 120ms ease;
+.shipDead:hover {
+  background: transparent;
+  box-shadow: none;
 }
-.shipRow:hover .shipArrow {
-  color: var(--accent);
-  transform: translateX(4px);
+.shipDead:hover .shipProject {
+  color: var(--ink);
 }
 .shipAll {
   display: inline-block;
@@ -767,6 +763,12 @@
   .heroGrid .term {
     max-width: 560px;
   }
+  .shipRow {
+    grid-template-columns: 180px 1fr 80px;
+  }
+  .shipStack {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -842,6 +844,29 @@
   .mockAside {
     display: none;
   }
+
+  /* ship log: mirror /work archive's mobile collapse —
+     row 1: project + live tag, row 2: description spans full width. */
+  /* mobile: row 1 = name + tag (top-right), row 2 = description spans full width.
+     `1fr auto` lets the tag hug the right padding edge symmetrically with the name on the left. */
+  .shipRow {
+    grid-template-columns: 1fr auto;
+    gap: 8px 16px;
+  }
+  .shipRow > :first-child {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .shipRow > :last-child {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: right;
+  }
+  .shipScope {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    color: var(--soft);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -851,7 +876,6 @@
   .navLink,
   .shipRow,
   .shipProject,
-  .shipArrow,
   .toggle {
     transition-duration: 0ms;
   }
