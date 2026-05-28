@@ -33,7 +33,6 @@ const SHIP_LOG = [
   ['2024', 'csmediaoc.com', 'B2B · marketing svc.', 'agency site + brand design', 'live', 'https://www.csmediaoc.com/'],
   ['2023', 'embrsolar.com', 'B2B/C · solar', 'marketing site · 3D model · monday.com pipeline', 'live', 'https://www.embrsolar.com/'],
   ['2021', 'musclebees.co.uk', 'D2C · sports nutrition', 'ecommerce at scale · CRO-first', 'live', 'https://www.musclebees.co.uk/'],
-  ['2026', 'discord bots', 'milsim community', 'slash-command bot · lambda + ddb', 'side', null],
 ];
 
 const PROCESS = [

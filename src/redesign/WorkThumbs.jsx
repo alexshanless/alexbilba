@@ -152,33 +152,10 @@ function ThumbBees() {
   );
 }
 
-function ThumbBots() {
-  const cmd = { color: 'var(--accent)' };
-  const res = { color: 'var(--soft)', paddingLeft: 10 };
-  return (
-    <div className={styles.thumb} style={{ aspectRatio: '16/9' }}>
-      <div style={{ position: 'absolute', inset: 0, padding: '14px', fontSize: 9.5, lineHeight: 1.5 }}>
-        <div style={{ color: 'var(--soft)', marginBottom: 8 }}>discord bots · milsim community ops</div>
-        <div><span style={cmd}>/onboard</span> user:@Rook callsign:Viper</div>
-        <div style={res}>↳ nickname set · welcome sent</div>
-        <div><span style={cmd}>/promo</span> nominate</div>
-        <div style={res}>↳ vote open · batch ceremony ready</div>
-        <div><span style={cmd}>/timestamp</span> when:tomorrow 8pm PT</div>
-        <div style={res}>↳ renders in each viewer&apos;s local time</div>
-        <div><span style={cmd}>/roll</span> 1d20 <span style={{ color: 'var(--soft)' }}>→</span> <span style={{ color: 'var(--warn)' }}>🎲 17</span></div>
-        <div><span style={cmd}>/ask</span> question:rules of engagement?</div>
-        <div style={res}>↳ doctrine AI · cites sources</div>
-        <div style={{ color: 'var(--soft)', marginTop: 8, fontSize: 9 }}>λ aws lambda + dynamodb · still running</div>
-      </div>
-    </div>
-  );
-}
-
 export const THUMBS = {
   buildcore: ThumbBuildCore,
   embr: ThumbEMBR,
   jna: ThumbJNA,
   csm: ThumbCSM,
   bees: ThumbBees,
-  bots: ThumbBots,
 };
