@@ -89,25 +89,10 @@ export const WORK_PROJECTS = [
     stack: 'custom storefront · CRO · custom JS',
     outcome: null,
   },
-  {
-    id: 'bots',
-    year: '2026',
-    name: 'Discord Bots',
-    url: 'github',
-    link: null,
-    status: 'side',
-    category: 'side',
-    thumb: 'bots',
-    body:
-      'Serverless Discord bot for a milsim community: member onboarding with callsigns, promotion votes and instant batch ceremonies, event timestamps that render in everyone’s local time, dice rolls, and a doctrine Q&A backed by an LLM. Event-driven on AWS Lambda with DynamoDB for state — still running, no babysitting.',
-    tags: ['side', 'serverless'],
-    stack: 'AWS Lambda · DynamoDB · Discord interactions · LLM',
-    outcome: null,
-  },
 ];
 
 // Filter chips. Counts derive from WORK_PROJECTS categories.
-export const WORK_FILTERS = ['all', 'fullstack', 'marketing site', 'e-commerce', 'side'];
+export const WORK_FILTERS = ['all', 'fullstack', 'marketing site', 'e-commerce'];
 
 // Archive = the real remaining portfolio projects (researched scope per site).
 // `type` is the engagement category, not the platform. No fabricated dates.
