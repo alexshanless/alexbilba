@@ -7,7 +7,7 @@ import RouteTransition from './redesign/RouteTransition';
 
 // Per-route document titles for SEO / tab labels.
 const TITLES = {
-  '/': 'Alex Bilba — fullstack dev + ui designer',
+  '/': 'Alex Bilba — Technical Lead for Founders | Design & Scale',
   '/work': 'Work — Alex Bilba',
 };
 
