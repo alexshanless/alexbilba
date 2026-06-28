@@ -1,0 +1,385 @@
+/* ============================================================
+   /work — "Workshop · Dark" projects page.
+   Tokens MUST stay in sync with RedesignHome.module.css (shared
+   design system). Duplicated here so the page is self-contained;
+   if you change a token, change it in both files.
+   ============================================================ */
+
+.page {
+  /* dark mode (primary / default) */
+  --bg: #0e0d0a;
+  --ink: #e8e2d0;
+  --soft: #8a8372;
+  --rule: #2a2722;
+  --grid: #1a1815;
+  --accent: #7cb897;
+  --warn: #e8a86a;
+  --err: #e07a5f;
+
+  --term-bg: #1a1815;
+  --term-ink: #e8e2d2;
+  --buildcore-outer: #14120f;
+  --row-hover: #211e18;
+  --chrome-dot: #3a3530;
+
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 14px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100dvh;
+  overflow-x: clip;
+}
+
+.page[data-theme='light'] {
+  --bg: #f1eee6;
+  --ink: #16140f;
+  --soft: #5e574a;
+  --rule: #1f1c16;
+  --grid: #d8d2c2;
+  --accent: #2c5f4a;
+  --warn: #b85a1e;
+  --err: #c04a32;
+
+  --term-bg: #16140f;
+  --term-ink: #e8e2d2;
+  --buildcore-outer: #faf7ee;
+  --row-hover: #e4decf;
+  --chrome-dot: #c7bfab;
+}
+
+.page h1,
+.page h2,
+.page h3 {
+  margin: 0;
+  font-weight: 500;
+}
+.page p {
+  margin: 0;
+}
+
+.display {
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+.dim {
+  color: var(--soft);
+}
+.ok {
+  color: var(--accent);
+}
+.warn {
+  color: var(--warn);
+}
+
+/* ---------- top bar ---------- */
+.topbar {
+  padding: 14px 32px;
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.topbarLeft {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+.topbarRight {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 14px;
+}
+.navLink {
+  color: var(--soft);
+  text-decoration: none;
+  transition: color 120ms ease;
+}
+.navLink:hover {
+  color: var(--ink);
+}
+.navActive {
+  color: var(--ink);
+  text-decoration: none;
+}
+.navActive::before {
+  content: '▸ ';
+  color: var(--accent);
+}
+.sayHi {
+  color: var(--accent);
+  text-decoration: none;
+}
+.menuButton {
+  display: none;
+  background: none;
+  border: 1px solid var(--rule);
+  color: var(--ink);
+  font: inherit;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+/* ---------- section scaffolding ---------- */
+.section {
+  padding: 48px 32px;
+}
+.ascii {
+  white-space: pre;
+  overflow: hidden;
+  color: var(--rule);
+  padding: 0 32px;
+  user-select: none;
+}
+.sectionHead {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+.label {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--soft);
+}
+
+/* ---------- section grids (responsive) ---------- */
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: end;
+}
+/* allow grid cells to shrink below content so nothing stretches the page */
+.heroGrid > *,
+.featuredGrid > *,
+.gridTwo > *,
+.ctaGrid > * {
+  min-width: 0;
+}
+.featuredGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+.gridTwo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.ctaGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: end;
+}
+
+/* ---------- cards ---------- */
+.card {
+  border: 1px solid var(--rule);
+  background: var(--grid);
+}
+.thumb {
+  position: relative;
+  background: var(--buildcore-outer);
+  border: 1px solid var(--rule);
+  overflow: hidden;
+}
+.thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.02) 0 2px, transparent 2px 14px);
+  pointer-events: none;
+}
+
+/* clickable project card (grid + featured) */
+.projCard {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 120ms ease, box-shadow 120ms ease;
+}
+.projCard:hover {
+  background: var(--row-hover);
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+.projName {
+  transition: color 120ms ease;
+}
+.projCard:hover .projName {
+  color: var(--accent);
+}
+
+/* ---------- tags & chips ---------- */
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border: 1px solid var(--rule);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--soft);
+  margin-right: 6px;
+}
+.tagLive {
+  color: var(--accent);
+  border-color: #26392f;
+}
+.tagPriv {
+  color: var(--warn);
+  border-color: #3f362a;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border: 1px solid var(--rule);
+  font-size: 12px;
+  color: var(--soft);
+  background: none;
+  font: inherit;
+  cursor: pointer;
+  transition: color 120ms ease, border-color 120ms ease;
+}
+.chip:hover {
+  color: var(--ink);
+  border-color: var(--soft);
+}
+.chipOn {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+.chipOn::before {
+  content: '▸ ';
+  color: var(--accent);
+}
+
+/* ---------- archive rows ---------- */
+.archRow {
+  display: grid;
+  grid-template-columns: 220px 1fr 220px 80px;
+  gap: 24px;
+  padding: 14px 16px;
+  margin: 0 -16px;
+  border-bottom: 1px solid var(--rule);
+  align-items: baseline;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 120ms ease, box-shadow 120ms ease;
+}
+.archRow:hover {
+  background: var(--row-hover);
+  box-shadow: inset 2px 0 0 var(--accent);
+}
+.archName {
+  transition: color 120ms ease;
+}
+.archRow:hover .archName {
+  color: var(--accent);
+}
+/* dead-link rows: present but not clickable, so no hover affordance */
+.archDead:hover {
+  background: transparent;
+  box-shadow: none;
+}
+.archDead:hover .archName {
+  color: var(--ink);
+}
+
+/* ---------- footer (inverts) ---------- */
+.footer {
+  background: var(--ink);
+  color: var(--bg);
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.footerDim {
+  color: var(--soft);
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 1024px) {
+  .featuredGrid {
+    grid-template-columns: 1fr;
+  }
+  .archRow {
+    grid-template-columns: 180px 1fr 80px;
+  }
+  .archStack {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    padding: 14px 20px;
+  }
+  .topbarLeftExtra,
+  .desktopOnly {
+    display: none;
+  }
+  .menuButton {
+    display: inline-block;
+  }
+  .section {
+    padding: 36px 20px;
+  }
+  .ascii {
+    padding: 0 20px;
+  }
+  .sectionHead {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .heroGrid,
+  .ctaGrid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .gridTwo {
+    grid-template-columns: 1fr;
+  }
+  /* mobile: row 1 = name + tag (top-right), row 2 = scope spans full width.
+     `1fr auto` lets the tag hug the right padding edge symmetrically with the name on the left. */
+  .archRow {
+    grid-template-columns: 1fr auto;
+    gap: 8px 16px;
+  }
+  .archRow > :first-child {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .archRow > :last-child {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: right;
+  }
+  .archScope {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    color: var(--soft);
+  }
+  .footer {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projCard,
+  .archRow,
+  .projName,
+  .archName,
+  .chip {
+    transition-duration: 0ms;
+  }
+}

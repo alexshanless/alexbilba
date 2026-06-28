@@ -1,41 +1,45 @@
 import './index.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ProfileSection from './components/profile/ProfileSection';
-import ProofStrip from './components/sections/ProofStrip';
-import HowIWork from './components/sections/HowIWork';
-import ForFounders from './components/sections/ForFounders';
-import SkillsExperienceLayout from './components/experience/SkillsExperienceLayout';
-import FeaturedProjects from './components/sections/FeaturedProjects';
-import PortfolioLinks from './components/sections/PortfolioLinks';
-import DetailsGrid from './components/sections/DetailsGrid';
-import TestimonialsSlider from './components/testimonials/TestimonialsSlider';
-import ProjectsPage from './components/projects/ProjectsPage';
-import JokePopup from './components/JokePopup';
+import { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import RedesignHome from './redesign/RedesignHome';
+import WorkPage from './redesign/WorkPage';
+import RouteTransition from './redesign/RouteTransition';
 
-const HomePage = () => {
-  return (
-    <div className='portfolio-container'>
-      <ProfileSection />
-      <ProofStrip />
-      <HowIWork />
-      <ForFounders />
-      <SkillsExperienceLayout />
-      <FeaturedProjects />
-      <PortfolioLinks />
-      <DetailsGrid />
-      <TestimonialsSlider />
-    </div>
-  );
+// Per-route document titles for SEO / tab labels.
+const TITLES = {
+  '/': 'Alex Bilba — Technical Lead for Founders | Design & Scale',
+  '/work': 'Work — Alex Bilba',
+};
+
+// On every route change: set the title, scroll to the top of the next page
+// (so a Link from the bottom of one page lands at the start of the next), and
+// honor a #hash by scrolling to that section instead.
+const ScrollToTop = () => {
+  const { pathname, hash } = useLocation();
+  useEffect(() => {
+    document.title = TITLES[pathname] ?? 'Alex Bilba';
+    if (hash) {
+      const el = document.getElementById(hash.slice(1));
+      if (el) {
+        el.scrollIntoView();
+        return;
+      }
+    }
+    window.scrollTo(0, 0);
+  }, [pathname, hash]);
+  return null;
 };
 
 const App = () => {
   return (
     <Router>
-      <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/projects' element={<ProjectsPage />} />
-      </Routes>
-      <JokePopup />
+      <ScrollToTop />
+      <RouteTransition>
+        <Routes>
+          <Route path='/' element={<RedesignHome />} />
+          <Route path='/work' element={<WorkPage />} />
+        </Routes>
+      </RouteTransition>
     </Router>
   );
 };

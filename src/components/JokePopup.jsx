@@ -44,7 +44,7 @@ const JokePopup = () => {
 			});
 			const data = await response.json();
 			setBubbleText(data.joke);
-		} catch (error) {
+		} catch {
 			setBubbleText('Oops! The joke machine broke. Try again?');
 		} finally {
 			setLoading(false);
