@@ -1,12 +1,13 @@
 import './index.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ProfileSection from './components/profile/ProfileSection';
-import Interests from './components/sections/Interests';
+import ProofStrip from './components/sections/ProofStrip';
+import HowIWork from './components/sections/HowIWork';
+import ForFounders from './components/sections/ForFounders';
 import SkillsExperienceLayout from './components/experience/SkillsExperienceLayout';
 import FeaturedProjects from './components/sections/FeaturedProjects';
 import PortfolioLinks from './components/sections/PortfolioLinks';
 import DetailsGrid from './components/sections/DetailsGrid';
-import SideProjects from './components/sections/SideProjects';
 import TestimonialsSlider from './components/testimonials/TestimonialsSlider';
 import ProjectsPage from './components/projects/ProjectsPage';
 import JokePopup from './components/JokePopup';
@@ -15,12 +16,13 @@ const HomePage = () => {
   return (
     <div className='portfolio-container'>
       <ProfileSection />
-      <Interests />
+      <ProofStrip />
+      <HowIWork />
+      <ForFounders />
       <SkillsExperienceLayout />
       <FeaturedProjects />
       <PortfolioLinks />
       <DetailsGrid />
-      <SideProjects />
       <TestimonialsSlider />
     </div>
   );

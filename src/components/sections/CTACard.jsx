@@ -3,8 +3,8 @@ import { EmailIcon, CalendarIcon } from '../icons/UtilityIcons';
 const CTACard = () => {
   return (
     <div className='cta-card'>
-      <h3>Let's Work Together</h3>
-      <p>Have a project in mind? I'd love to hear about it.</p>
+      <h3>Tell me what you're trying to build.</h3>
+      <p>I'll tell you straight what it takes.</p>
       <div className='cta-actions'>
         <a
           href='mailto:hello@alexbilba.com'
