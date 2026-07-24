@@ -880,3 +880,233 @@
     transition-duration: 0ms;
   }
 }
+
+/* ============================================================
+   Case study — additive, reuses the tokens + primitives above.
+   Content-first and JS-free: no interaction-gated reveals, so it
+   prints / PDFs cleanly straight from the browser.
+   ============================================================ */
+.csHead {
+  padding: 56px 32px 40px;
+  max-width: 900px;
+}
+.csKicker {
+  color: var(--soft);
+  margin-bottom: 20px;
+}
+.csTitle {
+  font-size: clamp(30px, 6vw, 52px);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  margin-bottom: 12px;
+}
+.csSub {
+  color: var(--soft);
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 680px;
+}
+.csSection {
+  padding: 40px 32px;
+  max-width: 900px;
+}
+.csSectionLabel {
+  color: var(--soft);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.csH2 {
+  font-size: 28px;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+.csProse {
+  font-size: 15px;
+  line-height: 1.75;
+  max-width: 720px;
+}
+.csProse + .csProse {
+  margin-top: 16px;
+}
+.csProse strong {
+  font-weight: 500;
+  color: var(--ink);
+}
+/* results list */
+.csResults {
+  border-top: 1px solid var(--rule);
+  margin-top: 4px;
+}
+.csResult {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.csResult .csResultNum {
+  color: var(--accent);
+  margin-right: 10px;
+}
+/* fact band — big numbers, scannable in a glance */
+.csStats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  border-top: 1px solid var(--rule);
+  border-left: 1px solid var(--rule);
+  margin-top: 32px;
+}
+.csStat {
+  padding: 18px 20px;
+  border-right: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.csStatBig {
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.csStatCap {
+  color: var(--soft);
+  font-size: 11px;
+  line-height: 1.4;
+  margin-top: 8px;
+}
+
+/* recommended-vs-chosen comparison */
+.csCmp {
+  border-top: 1px solid var(--rule);
+  margin-top: 4px;
+}
+.csCmpHead,
+.csCmpRow {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr;
+  gap: 12px 24px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 13px;
+  line-height: 1.55;
+}
+.csCmpHead {
+  color: var(--soft);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.csCmpRow > :first-child {
+  color: var(--soft);
+}
+.csChosen {
+  color: var(--ink);
+}
+
+/* spec rows — name | one-line guarantee (constraints, machinery) */
+.csSpec {
+  border-top: 1px solid var(--rule);
+  margin-top: 8px;
+}
+.csSpecRow {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  gap: 8px 24px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.csSpecName {
+  letter-spacing: -0.01em;
+}
+.csSpecName .csNum {
+  color: var(--accent);
+  margin-right: 10px;
+}
+.csSpecBody {
+  color: var(--soft);
+}
+
+/* tight bullet list */
+.csBullets {
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+  max-width: 720px;
+}
+.csBullets li {
+  padding: 6px 0 6px 18px;
+  position: relative;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--soft);
+}
+.csBullets li::before {
+  content: '·';
+  position: absolute;
+  left: 2px;
+  color: var(--accent);
+}
+
+/* back link at the foot of the study */
+.csBack {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--soft);
+  transition: color 120ms ease, transform 120ms ease;
+}
+.csBack:hover {
+  color: var(--accent);
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .csHead,
+  .csSection {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .csCmpHead {
+    display: none;
+  }
+  .csCmpRow {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .csCmpRow > :first-child {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .csSpecRow {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
+
+/* Print / PDF: force a clean high-contrast page regardless of theme,
+   drop the sticky bar, and let ASCII diagrams wrap into the margins. */
+@media print {
+  .page,
+  .page[data-theme='dark'],
+  .page[data-theme='light'] {
+    --bg: #ffffff;
+    --ink: #111111;
+    --soft: #444444;
+    --rule: #bbbbbb;
+    --accent: #1f5c46;
+    --warn: #8a4b12;
+    background: #fff;
+    color: #111;
+  }
+  .topbar {
+    position: static;
+  }
+  .archPre {
+    white-space: pre-wrap;
+  }
+}

@@ -69,10 +69,10 @@ const UPDATES = [
 ];
 
 const KPIS = [
-  ['Avg Dollars/Day Completed (MTD)', '$0'],
-  ['Active Projects On Time', '0'],
-  ['Avg Projects/Day Completed Early (MTD)', '0.0'],
-  ['Avg Projects/Day Completed Late (MTD)', '0.0'],
+  ['Avg Dollars/Day Completed (MTD)', '$12.4k'],
+  ['Active Projects On Time', '5'],
+  ['Avg Projects/Day Completed Early (MTD)', '1.8'],
+  ['Avg Projects/Day Completed Late (MTD)', '0.4'],
 ];
 
 function HomeView() {
@@ -170,11 +170,11 @@ function HomeView() {
           </div>
           <div className={bc.kpiTop}>
             <div className={bc.kpiBig}>
-              <div className={bc.kpiBigNum}>1</div>
+              <div className={bc.kpiBigNum}>6</div>
               <div className={bc.kpiLabel}>Active Project Count</div>
             </div>
             <div className={bc.kpiBig}>
-              <div className={bc.kpiBigNum}>$0</div>
+              <div className={bc.kpiBigNum}>$248.6k</div>
               <div className={bc.kpiLabel}>Active Dollar</div>
             </div>
           </div>
@@ -386,9 +386,9 @@ function AnalyticsView() {
       <h2 className={bc.greeting} style={{ marginBottom: 4 }}>Analytics</h2>
       <div className={bc.tSub} style={{ marginBottom: 16 }}>Client performance metrics and delivery trends.</div>
       <div className={bc.statGrid}>
-        <StatCard label="Active Project Count" value="1" />
-        <StatCard label="Avg Project Scope Value" value="$48.50" down />
-        <StatCard label="Dollars Per Day Completed" value="$0" />
+        <StatCard label="Active Project Count" value="6" />
+        <StatCard label="Avg Project Scope Value" value="$41.4k" down />
+        <StatCard label="Dollars Per Day Completed" value="$12.4k" />
         <StatCard label="On-Time Completion %" value="No data" no />
         <StatCard label="Early Completion %" value="No data" no down />
         <StatCard label="Late Completion %" value="No data" no />
