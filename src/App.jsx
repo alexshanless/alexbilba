@@ -3,12 +3,14 @@ import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import RedesignHome from './redesign/RedesignHome';
 import WorkPage from './redesign/WorkPage';
+import CaseStudyMigration from './redesign/CaseStudyMigration';
 import RouteTransition from './redesign/RouteTransition';
 
 // Per-route document titles for SEO / tab labels.
 const TITLES = {
   '/': 'Alex Bilba — fullstack dev + ui designer',
   '/work': 'Work — Alex Bilba',
+  '/work/platform-migration': 'Platform migration case study — Alex Bilba',
 };
 
 // On every route change: set the title, scroll to the top of the next page
@@ -38,6 +40,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<RedesignHome />} />
           <Route path='/work' element={<WorkPage />} />
+          <Route path='/work/platform-migration' element={<CaseStudyMigration />} />
         </Routes>
       </RouteTransition>
     </Router>

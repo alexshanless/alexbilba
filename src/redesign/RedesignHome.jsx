@@ -28,6 +28,7 @@ const STACK = [
 ];
 
 const SHIP_LOG = [
+  ['2026', 'platform migration', 'B2B · construction', 'supabase/postgres → serverless aws · dual-write, reversible cutover', 'case study', '/work/platform-migration'],
   ['2025', 'buildcore (private)', 'B2B · construction', 'fullstack SaaS · react + aws', 'in dev', null],
   ['2024', 'jnagroup.net.au', 'B2B · structural eng.', 'marketing site · three audiences', 'live', 'https://www.jnagroup.net.au/'],
   ['2024', 'csmediaoc.com', 'B2B · marketing svc.', 'agency site + brand design', 'live', 'https://www.csmediaoc.com/'],
@@ -125,24 +126,24 @@ export default function RedesignHome() {
           <div>
             <div className={styles.label}><SectionLabel hash="whoami">whoami</SectionLabel></div>
             <h1 className={`${styles.display} ${styles.heroH1}`}>
-              I'm Alex.<br />
-              fullstack dev + ui designer<br />
-              who ships the thing <span className={styles.warn}>before</span><br />
-              the agency would have started.
+              I take platforms from<br />
+              proof-of-concept to production<br />
+              — and <span className={styles.warn}>off legacy stacks</span><br />
+              without breaking them.
             </h1>
             <div className={styles.metaGrid}>
               <span className={styles.dim}>role</span>
-              <span>fullstack dev, UI designer</span>
+              <span>technical PM · platform architect</span>
               <span className={styles.dim}>focus</span>
-              <span>B2B SaaS · product, marketing site, the bits in between</span>
+              <span>B2B SaaS · migrations, foundations, POC→production</span>
               <span className={styles.dim}>stack</span>
-              <span>React · AWS (Lambda/DynamoDB/Cognito) · Webflow</span>
+              <span>TypeScript · AWS (Lambda/DynamoDB/Cognito/CDK) · React/Next.js</span>
               <span className={styles.dim}>uptime</span>
               <span><span className={styles.ok}>7y</span> · freelance since March 2019</span>
               <span className={styles.dim}>based</span>
               <span>Tacoma, WA · UTC−8</span>
               <span className={styles.dim}>status</span>
-              <span>Full-time on BuildCore. <span className={styles.warn}>Availability very limited, open to consultations.</span></span>
+              <span><span className={styles.warn}>taking on select engagements · advisory and platform builds</span></span>
             </div>
           </div>
           <div>
@@ -181,20 +182,25 @@ export default function RedesignHome() {
         <div className={styles.sectionHead}>
           <div>
             <div className={styles.dim} style={{ marginBottom: 14 }}># building now</div>
-            <div>2025</div>
-            <div className={`${styles.dim} ${styles.fcMetaDate}`}>started · in active dev</div>
+            <div>2026</div>
+            <div className={`${styles.dim} ${styles.fcMetaDate}`}>cutover-ready · read cutover pending</div>
           </div>
           <div>
             <div className={styles.row} style={{ marginBottom: 14 }}>
               <span className={styles.warn}>●</span>
-              <span className={styles.dim}>build.running</span>
+              <span className={styles.dim}>migration.ready</span>
               <span className={styles.dim}>·</span>
               <span>buildcore (private)</span>
             </div>
             <h3 className={`${styles.display} ${styles.fcH3}`}>
-              BuildCore. A construction management SaaS.<br />
-              Building it end to end. React on top, AWS underneath.
+              BuildCore. A B2B construction-management platform.<br />
+              Migrating it from Supabase/Postgres to serverless AWS — <span className={styles.warn}>dual-write</span>, reversible entity-by-entity cutover.
             </h3>
+            <div style={{ marginBottom: 24 }}>
+              <Link to="/work/platform-migration" className={styles.shipAll} style={{ marginTop: 0 }}>
+                → read the migration case study
+              </Link>
+            </div>
 
             {/* interactive wireframe — click tabs to swap page screenshots */}
             <BuildCoreDemo />
@@ -213,26 +219,28 @@ export default function RedesignHome() {
               <tbody>
                 <tr>
                   <td className={styles.matrixLabel}>brief</td>
-                  <td>Construction management SaaS for a real team. Building the platform from scratch, end to end, solo. React frontend, AWS backend, custom design system, all of it.</td>
+                  <td>A live B2B construction-management platform running two backends — an inherited Supabase/Postgres staff portal and a native AWS customer portal. Converging both onto one serverless AWS data model, migrated live: Supabase stays authoritative while every write mirrors to DynamoDB, and reads flip per entity behind a flag.</td>
                 </tr>
                 <tr>
                   <td className={styles.matrixLabel}>scope</td>
-                  <td>React frontend · AWS backend · role-based access · document upload pipelines · automated reporting · multi-tenant data model</td>
+                  <td>dual-write fan-out · field-by-field shadow compare · soak-gated cutover · instant per-entity reversal · zero-ETL warehouse to Redshift</td>
                 </tr>
                 <tr>
                   <td className={styles.matrixLabel}>stack</td>
-                  <td>React · Lambda · DynamoDB · Cognito · S3 · API Gateway</td>
+                  <td>TypeScript · Lambda · DynamoDB · API Gateway · Cognito · Redshift Serverless · CDK</td>
                 </tr>
                 <tr>
                   <td className={styles.matrixLabel}>stage</td>
                   <td>
-                    <span className={styles.warn}>in active development</span> ·{' '}
-                    <span className={styles.dim}>pre-launch, building toward first release</span>
+                    <span className={styles.warn}>cutover-ready · read cutover pending</span>
                   </td>
                 </tr>
                 <tr>
                   <td className={styles.matrixLabel}>status</td>
-                  <td>private · walkthrough available on request</td>
+                  <td>
+                    private ·{' '}
+                    <Link to="/work/platform-migration" style={{ color: 'var(--accent)' }}>read the case study →</Link>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -254,8 +262,9 @@ export default function RedesignHome() {
         <div className={styles.shipTable}>
           {SHIP_LOG.map((r) => {
             const [year, project, category, description, status, link] = r;
+            const isInternal = Boolean(link) && link.startsWith('/');
             const tagClass = link ? styles.ok : status === 'in dev' ? styles.warn : styles.dim;
-            const tagText = link ? 'live ↗' : status;
+            const tagText = isInternal ? 'case study →' : link ? 'live ↗' : status;
             const inner = (
               <>
                 <span>
@@ -267,6 +276,13 @@ export default function RedesignHome() {
                 <span className={tagClass} style={{ textAlign: 'right' }}>{tagText}</span>
               </>
             );
+            if (isInternal) {
+              return (
+                <Link key={project} className={styles.shipRow} to={link}>
+                  {inner}
+                </Link>
+              );
+            }
             return link ? (
               <a key={project} className={styles.shipRow} href={link} target="_blank" rel="noreferrer">
                 {inner}
@@ -308,8 +324,7 @@ export default function RedesignHome() {
           <div>
             <SectionLabel hash="now">/now</SectionLabel>
             <h2 className={`${styles.display} ${styles.nowH2}`}>
-              Availability&apos;s tight.<br />
-              Open to consultations.<br />
+              Open to select work.<br />
               <span className={styles.warn}>Email beats DMs.</span>
             </h2>
             <MailtoLine />
@@ -320,7 +335,7 @@ export default function RedesignHome() {
               <span className={styles.dim}>current project</span>
               <span>buildcore · ongoing fullstack work</span>
               <span className={styles.dim}>availability</span>
-              <span className={styles.warn}>very limited · open to consultations</span>
+              <span className={styles.warn}>selective · advisory and build work</span>
               <span className={styles.dim}>response time</span>
               <span className={styles.ok}>&lt; 24h on weekdays</span>
               <span className={styles.dim}>timezone</span>
@@ -349,7 +364,7 @@ export default function RedesignHome() {
       {/* ── footer (inverts — open decision) ── */}
       <footer className={styles.footer}>
         <span>© 2026 alex bilba · tacoma</span>
-        <span className={styles.footerDim}>built in react · ~/site.v7 · last deploy 2026-05-27</span>
+        <span className={styles.footerDim}>built in react · ~/site.v7 · last deploy 2026-07-23</span>
         <span className={styles.footerDim}>
           <a href={UPWORK} target="_blank" rel="noreferrer" style={{ color: 'inherit' }}>upwork</a>
           {' · '}
