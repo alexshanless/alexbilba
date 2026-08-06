@@ -128,8 +128,8 @@ export default function RedesignHome() {
             <h1 className={`${styles.display} ${styles.heroH1}`}>
               I plan <br />
               I build<br />
-              — or <span className={styles.warn}>delegate</span><br />
-              to the right people. Any tech, any stack.
+              - and <span className={styles.warn}>ship</span><br />
+              to production. No team required.
             </h1>
             <div className={styles.metaGrid}>
               <span className={styles.dim}>role</span>
