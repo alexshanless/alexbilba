@@ -126,10 +126,10 @@ export default function RedesignHome() {
           <div>
             <div className={styles.label}><SectionLabel hash="whoami">whoami</SectionLabel></div>
             <h1 className={`${styles.display} ${styles.heroH1}`}>
-              I take platforms from<br />
-              proof-of-concept to production<br />
-              — and <span className={styles.warn}>off legacy stacks</span><br />
-              without breaking them.
+              I plan <br />
+              I build<br />
+              — or <span className={styles.warn}>delegate</span><br />
+              to the right people. Any tech, any stack.
             </h1>
             <div className={styles.metaGrid}>
               <span className={styles.dim}>role</span>
