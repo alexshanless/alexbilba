@@ -256,7 +256,7 @@
 }
 .heroGrid {
   display: grid;
-  grid-template-columns: 1fr 520px;
+  grid-template-columns: 1fr;
   gap: 48px;
 }
 .section {
