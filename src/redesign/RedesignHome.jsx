@@ -127,7 +127,7 @@ export default function RedesignHome() {
             <h1 className={`${styles.display} ${styles.heroH1}`}>
               I plan <br />
               I build<br />
-              - and <span className={styles.warn}>ship</span><br />
+              and <span className={styles.warn}>ship</span>
               to production. No team required.
             </h1>
             <div className={styles.metaGrid}>
