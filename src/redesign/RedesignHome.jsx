@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import styles from './RedesignHome.module.css';
 import { useTheme } from './useTheme';
 import ThemeToggle from './ThemeToggle';
-import FitCheckTerminal from './FitCheckTerminal';
 import SectionLabel from './SectionLabel';
 import MailtoLine from './MailtoLine';
 import BuildCoreDemo from './BuildCoreDemo';
@@ -145,9 +144,6 @@ export default function RedesignHome() {
               <span className={styles.dim}>status</span>
               <span><span className={styles.warn}>taking on select engagements · advisory and platform builds</span></span>
             </div>
-          </div>
-          <div>
-            <FitCheckTerminal />
           </div>
         </div>
       </section>
